@@ -26,7 +26,7 @@ export const PokemonImg = styled.img`
   height: 106px;
   top: -242px;
   left: 161px;
-  background: yellow;
+  background: transparent;
 
   @media(max-width:683px){
     width: 92px;
@@ -51,7 +51,7 @@ export const PokemonName = styled.label`
   top:-373px;
   left: 380px;
   font-size: 25px;
-  background: yellow;
+  background: transparent;
 
   @media(max-width:683px){
     width: 112px;
@@ -68,7 +68,7 @@ export const Circle = styled.div`
   top: -511px;
   left:119px;
   border-radius: 100%;
-  background: yellow;
+  background: transparent;
 
   @media(max-width:683px){
     width: 39px;
@@ -86,7 +86,7 @@ export const PokemonTypeOne = styled.label`
   align-items: center;
   top: -275px;
   left: 363px;
-  background: yellow;
+  background: transparent;
 
   @media(max-width:683px){
     width: 49px;
@@ -104,7 +104,7 @@ export const PokemonTypeTwo = styled.label`
   align-items: center;
   top: -299px;
   left: 478px;
-  background: yellow;
+  background: transparent;
 
   @media(max-width:683px){
     width: 50px;
@@ -119,7 +119,7 @@ export const PokemonMale = styled.label`
   height: 24px;
   top: -374px;
   left: 357px;
-  background: yellow;
+  background: transparent;
 
   @media(max-width:683px){
     width: 20px;
@@ -134,7 +134,7 @@ export const PokemonFemale = styled.label`
   height: 24px;
   top: -398px;
   left: 386px;
-  background: yellow;
+  background: transparent;
 
   @media(max-width:683px){
     width: 20px;
@@ -145,33 +145,54 @@ export const PokemonFemale = styled.label`
 `
 export const Left = styled.label`
   position: relative;
+  display: grid;
   width: 25px;
   height: 24px;
+  justify-content: start;
   top: -398px;
   left: 265px;
-  background: yellow;
+  background: transparent;
   cursor:pointer;
 
   @media(max-width:683px){
+    display: block;
     width: 20px;
     height: 20px;
-    top: -307px;
-    left: 217px;
+    top: -311px;
+    left: 121px;
   }
 `
 export const Right = styled.label`
   position: relative;
+  display: grid;
   width: 25px;
   height: 24px;
+  justify-content: end;
   top: -422px;
   left: 293px;
-  background: yellow;
+  background: transparent;
   cursor: pointer;
 
   @media(max-width:683px){
+    display: block;
     width: 20px;
     height: 20px;
-    top: -307px;
-    left: 217px;
+    top: -331px;
+    left: 148px;
+  }
+`
+export const PokemonSearch = styled.input`
+  position: relative;
+  width: 90px;
+  height: 33px;
+  top: -430px;
+  left: 159px;
+  
+  @media(max-width:683px){
+    width: 68px;
+    height: 26px;
+    top: -336px;
+    left: 45px;
+    font-size: 10px;
   }
 `

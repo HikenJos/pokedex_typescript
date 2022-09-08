@@ -1,5 +1,5 @@
 import { Container } from '../elements/Container'
-import { Center, Img, PokemonImg, PokemonName, Circle, PokemonTypeOne, PokemonTypeTwo, PokemonMale, PokemonFemale, Left, Right } from '../elements/PokedexElements'
+import { Center, Img, PokemonImg, PokemonName, Circle, PokemonTypeOne, PokemonTypeTwo, PokemonMale, PokemonFemale, Left, Right, PokemonSearch } from '../elements/PokedexElements'
 import pokedex from '../resources/img/pokedex.png'
 import pokemonImageDefault from '../resources/img/PokemonDefault.png'
 
@@ -16,8 +16,9 @@ function Pokedex () {
         <PokemonTypeTwo>Poison</PokemonTypeTwo>
         <PokemonMale>M</PokemonMale>
         <PokemonFemale>F</PokemonFemale>
-        <Left>{'<'}</Left>
-        <Right>{'>'}</Right>
+        <Left>{'<  '}</Left>
+        <Right>{'  >'}</Right>
+        <PokemonSearch placeholder='Find Pokemon'/>
       </Center>
 
     </Container>
