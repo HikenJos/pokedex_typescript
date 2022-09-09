@@ -139,7 +139,7 @@ export const PokemonFemale = styled.label`
   font-weight: 700;
   color:white;
   background: transparent;
-  cursor: pointer;
+  cursor: default;
 
   @media(max-width:683px){
     width: 20px;
