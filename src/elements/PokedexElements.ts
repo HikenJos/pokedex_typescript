@@ -119,7 +119,9 @@ export const PokemonMale = styled.label`
   height: 24px;
   top: -374px;
   left: 357px;
+  font-weight: 700;
   background: transparent;
+  cursor: pointer;
 
   @media(max-width:683px){
     width: 20px;
@@ -134,7 +136,10 @@ export const PokemonFemale = styled.label`
   height: 24px;
   top: -398px;
   left: 386px;
+  font-weight: 700;
+  color:white;
   background: transparent;
+  cursor: pointer;
 
   @media(max-width:683px){
     width: 20px;
