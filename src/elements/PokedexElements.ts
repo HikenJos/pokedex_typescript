@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { theme } from '../theme'
 
 export const Center = styled.div`
   display: grid;
@@ -50,7 +51,8 @@ export const PokemonName = styled.label`
   justify-content: center;
   top:-373px;
   left: 380px;
-  font-size: 25px;
+  font-size: 16px;
+  color: ${theme.font};
   background: transparent;
 
   @media(max-width:683px){
@@ -77,7 +79,7 @@ export const Circle = styled.div`
     left: 15px;
   }
 `
-export const PokemonTypeOne = styled.label`
+export const PokemonTypeOne = styled.button`
   position: relative;
   display: grid;
   width: 64px;
@@ -86,6 +88,9 @@ export const PokemonTypeOne = styled.label`
   align-items: center;
   top: -275px;
   left: 363px;
+  font-family: Lato, sans-serif;
+  font-size: 11px;
+  color: ${theme.font};
   background: transparent;
 
   @media(max-width:683px){
@@ -93,9 +98,10 @@ export const PokemonTypeOne = styled.label`
     height: 19px;
     top: -210px;
     left: 199px;
+    font-size: 10px;
   }
 `
-export const PokemonTypeTwo = styled.label`
+export const PokemonTypeTwo = styled.button`
   position: relative;
   display: grid;
   width: 64px;
@@ -104,6 +110,9 @@ export const PokemonTypeTwo = styled.label`
   align-items: center;
   top: -299px;
   left: 478px;
+  font-family: Lato, sans-serif;
+  font-size: 11px;
+  color: ${theme.font};
   background: transparent;
 
   @media(max-width:683px){
@@ -111,9 +120,10 @@ export const PokemonTypeTwo = styled.label`
     height: 19px;
     top: -229px;
     left: 286px;
+    font-size: 10px;
   }
 `
-export const PokemonMale = styled.label`
+export const PokemonMale = styled.button`
   position: relative;
   width: 25px;
   height: 24px;
@@ -121,6 +131,7 @@ export const PokemonMale = styled.label`
   left: 357px;
   font-weight: 700;
   background: transparent;
+  border: none;
   cursor: pointer;
 
   @media(max-width:683px){
@@ -130,7 +141,7 @@ export const PokemonMale = styled.label`
     left: 194px;
   }
 `
-export const PokemonFemale = styled.label`
+export const PokemonFemale = styled.button`
   position: relative;
   width: 25px;
   height: 24px;
@@ -139,6 +150,7 @@ export const PokemonFemale = styled.label`
   font-weight: 700;
   color:white;
   background: transparent;
+  border:none;
   cursor: default;
 
   @media(max-width:683px){
@@ -148,41 +160,44 @@ export const PokemonFemale = styled.label`
     left: 217px;
   }
 `
-export const Left = styled.label`
+export const Left = styled.button`
   position: relative;
   display: grid;
   width: 25px;
   height: 24px;
   justify-content: start;
-  top: -398px;
+  top: -392px;
   left: 265px;
   background: transparent;
+  border:none;
   cursor:pointer;
 
   @media(max-width:683px){
     display: block;
     width: 20px;
-    height: 20px;
+    height: 25px;
     top: -311px;
     left: 121px;
   }
 `
-export const Right = styled.label`
+export const Right = styled.button`
   position: relative;
   display: grid;
   width: 25px;
   height: 24px;
   justify-content: end;
-  top: -422px;
+  align-items: end;
+  top: -425px;
   left: 293px;
   background: transparent;
+  border: none;
   cursor: pointer;
 
   @media(max-width:683px){
     display: block;
     width: 20px;
     height: 20px;
-    top: -331px;
+    top: -333px;
     left: 148px;
   }
 `
@@ -196,7 +211,7 @@ export const PokemonSearch = styled.input`
   @media(max-width:683px){
     width: 68px;
     height: 26px;
-    top: -336px;
+    top: -341px;
     left: 45px;
     font-size: 10px;
   }

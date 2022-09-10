@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { PokemonArray } from '../@types/pokemon'
 import { Container } from '../elements/Container'
 import { Center, Img, PokemonImg, PokemonName, Circle, PokemonTypeOne, PokemonTypeTwo, PokemonMale, PokemonFemale, Left, Right, PokemonSearch } from '../elements/PokedexElements'
@@ -9,21 +9,29 @@ import { GetMalePokemon } from '../functions/GetMalePokemon'
 import { GetBeforePokemon } from '../functions/GetBeforePokemon'
 import { GetNextPokemon } from '../functions/GetNextPokemon'
 import { initialState } from '../@types/initial_state'
+import { useSpeechSynthesis } from 'react-speech-kit'
 
 function Pokedex () {
   const [inputPokemon, setInputPokemon] = useState<string>('bulbasaur')
-  const btnFemale = useRef<HTMLLabelElement>(null)
+  const btnFemale = useRef<HTMLButtonElement>(null)
   const [isTherePokemonFemale, setisTherePokemonFemale] = useState<boolean>(false)
   const labelCircle = useRef<HTMLDivElement>(null)
   const url = `https://pokeapi.co/api/v2/pokemon/${inputPokemon}`
+  const { speak } = useSpeechSynthesis()
 
   const [pokemon, setPokemon] = useState<PokemonArray>(initialState as PokemonArray)
+
+  useEffect(() => {
+    speak({ text: `${pokemon.data.name}` })
+    speak({ text: `pokemon type ${pokemon.data.types[0].type.name} ${pokemon.data.types.length === 2 ? pokemon.data.types[1].type.name : ''}` })
+    console.log(pokemon.data)
+  }, [pokemon])
 
   function HandleInput (e:React.ChangeEvent<HTMLInputElement>) {
     setInputPokemon(e.target.value.toLowerCase())
   }
 
-  async function HandlePressedInput (e:React.KeyboardEvent<HTMLInputElement>) {
+  const HandlePressedInput = async (e:React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       const res = await GetPokemons(url, btnFemale, labelCircle)
       setPokemon(res)
@@ -37,9 +45,9 @@ function Pokedex () {
         <Img src={pokedex} alt='Pokedex' />
         <PokemonImg src={isTherePokemonFemale ? (pokemon.data.sprites.front_female) : pokemon.data.sprites.front_default } alt='Pokemon'/>
         <PokemonName>{pokemon.data.name.toUpperCase()}</PokemonName>
-        <Circle ref={labelCircle}/>
+        <Circle onKeyDown={(e) => e.key === 'Enter' ? '' : console.log(e.key)} ref={labelCircle}/>
         <PokemonTypeOne>{pokemon.data.types[0].type.name.toUpperCase()}</PokemonTypeOne>
-        <PokemonTypeTwo>{pokemon.data.types.length === 2 ? pokemon.data.types[1].type.name?.toUpperCase() : ''}</PokemonTypeTwo>
+        <PokemonTypeTwo>{pokemon.data.types.length === 2 && pokemon.data.types[1].type.name?.toUpperCase()}</PokemonTypeTwo>
         <PokemonMale onClick={() => setisTherePokemonFemale(GetMalePokemon)}>M</PokemonMale>
         <PokemonFemale onClick={() => setisTherePokemonFemale(GetFemalePokemon(pokemon))} ref={btnFemale}>F</PokemonFemale>
         <Left onClick={async () => setPokemon(await GetBeforePokemon(url, pokemon, labelCircle, btnFemale))}>{'<'}</Left>

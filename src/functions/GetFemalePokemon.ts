@@ -6,6 +6,6 @@ export function GetFemalePokemon (pokemon:PokemonArray) {
   if (imgFemalePokemon !== null) {
     isThereFemale = true
   }
-  // console.log(pokemon)
+
   return isThereFemale
 }

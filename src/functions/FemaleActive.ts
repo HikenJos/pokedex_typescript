@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function FemaleActive (url:string, refLabel:React.RefObject<HTMLLabelElement>) {
+export function FemaleActive (url:string, refLabel:React.RefObject<HTMLButtonElement>) {
   if (refLabel.current !== null) {
     if (url !== null) {
       refLabel.current.style.color = 'black'
