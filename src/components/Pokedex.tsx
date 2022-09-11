@@ -11,6 +11,7 @@ import { GetNextPokemon } from '../functions/GetNextPokemon'
 import { initialState } from '../@types/initial_state'
 import { useSpeechSynthesis } from 'react-speech-kit'
 import { SetImgTypesPokemon } from '../functions/SetImgTypesPokemon'
+import { Animation } from '../functions/Animation'
 import empty from '../resources/types_pokemon/type_emty.png'
 
 function Pokedex () {
