@@ -216,3 +216,69 @@ export const PokemonSearch = styled.input`
     font-size: 10px;
   }
 `
+export const IdPokemon = styled.label`
+  position: relative;
+  width:60px;
+  height: 30px;
+  top:-531px;
+  left:190px;
+
+  @media(max-width:683px){
+    top: -417px;
+    left: 59px;
+    font-size: 10px;
+  }
+`
+export const LedFemale = styled.div`
+  position: relative;
+  width: 10px;
+  height:10px;
+  top: -554px;
+  left:377px;
+  border-radius: 100%;
+  background: transparent;
+
+  @media(max-width:683px){
+    width: 9px;
+    height: 9px;
+    top: -444px;
+    left: 209px;
+  }
+`
+
+export const LeftIconType = styled.img`
+  position: relative;
+  width: 59px;
+  height: 59px;
+  top: -640px;
+  left: 378px;
+  background: transparent;
+  opacity: 0%;
+
+  @keyframes fadeIn {
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+  }
+
+  @media(max-width:683px){
+    width: 46px;
+    height: 46px;
+    top: -511px;
+    left: 209px;
+  }
+`
+export const RigthIconType = styled.img`
+  position: relative;
+  width: 59px;
+  height: 59px;
+  top: -700px;
+  left: 467px;
+  background: transparent;
+
+  @media(max-width:683px){
+    width: 46px;
+    height: 46px;
+    top: -557px;
+    left: 276px;
+  }
+`

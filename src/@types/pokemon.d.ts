@@ -40,3 +40,25 @@ export type PokemonArray = {
   status:number,
   statusText:string
 }
+
+export interface pokemonImgType {
+  bug?:string,
+  dark?:string,
+  dragon?:string,
+  electric?:string,
+  fairy?:string,
+  fighting?:string,
+  fire?:string,
+  flying?:string,
+  ghost?:string,
+  grass?:string,
+  ground?:string,
+  ice?:string,
+  normal?:string,
+  psychic?:string,
+  poison?:string,
+  rock?:string,
+  steel?:string,
+  water?:string
+  empty?:string
+}

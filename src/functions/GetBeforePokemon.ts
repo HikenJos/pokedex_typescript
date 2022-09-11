@@ -4,7 +4,7 @@ import { PokemonArray } from '../@types/pokemon'
 import { CircleLed } from './CircleLed'
 import { FemaleActive } from './FemaleActive'
 
-export async function GetBeforePokemon (url:string, pokemon:PokemonArray, refDiv:React.RefObject<HTMLDivElement>, refButton:React.RefObject<HTMLButtonElement>) {
+export async function GetBeforePokemon (url:string, pokemon:PokemonArray, refDiv:React.RefObject<HTMLDivElement>, refButton:React.RefObject<HTMLButtonElement>, divFemale:React.RefObject<HTMLDivElement>) {
   const id:number = pokemon.data.id
   if (id === 1) {
     url = 'https://pokeapi.co/api/v2/pokemon/905'
@@ -13,6 +13,6 @@ export async function GetBeforePokemon (url:string, pokemon:PokemonArray, refDiv
   }
   const res:PokemonArray = await axios.get(url)
   CircleLed(refDiv)
-  FemaleActive(res.data.sprites.front_female, refButton)
+  FemaleActive(res.data.sprites.front_female, refButton, divFemale)
   return res
 }
